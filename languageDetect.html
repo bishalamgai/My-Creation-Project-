@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foul Language Detector</title>
+</head>
+<body>
+
+    <h1>Foul Language Detector</h1>
+    <label for="TypeSentence">Type a sentence:</label>
+    <input type="text" id="TypeSentence">
+    <button onclick="DetectFoulLanguage()">Detect</button>
+  
+
+  <script>
+    function DetectFoulLanguage() {
+      
+      var EnterSentence = document.getElementById('TypeSentence').value;
+
+      
+      var words = EnterSentence.split(' ');
+
+     
+      var foulWords = ['fool', 'stupid', 'idiot'];
+
+      
+      var hasFoulLanguage = false;
+      for (var i = 0; i < words.length; i++) {
+        if (foulWords.includes(words[i])) {
+          hasFoulLanguage = true;
+          break;
+        }
+      }
+
+      var resultMessage = hasFoulLanguage ? 'Foul language detected!' : 'No foul language detected.';
+      alert(resultMessage);
+    }
+  </script>
+
+
+</body>
+</html>
